@@ -1,3 +1,3 @@
-# learning-git
+package main
 
 How to use got.
