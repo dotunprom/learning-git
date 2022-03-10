@@ -1,3 +1,3 @@
 package main
 
-How to use got.
+How to use got .
