@@ -9,5 +9,3 @@ echo script Name = $0
 echo First Argument = $1
 echo All Arguments = $*
 echo Number of Arguments = $#
-
-done
