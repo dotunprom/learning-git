@@ -1,1 +1,1 @@
-echo Frontend Component
+echo Frontend Components
