@@ -10,11 +10,11 @@ echo Hello World.
 # Magenta   35
 # Cyan      36
 
-# Syntax : echo -e "\e[COLmHello\0M["
+# Syntax : echo -e "\e[COLmHello\e[0M"
 # -e option is not enabled esc seq. without -e colors will not work
 # "" or '' Quote are mandatry for color to work.
 # \e[COLm : this to enable the color  COL is one of the color code.
 # \e[0m : disable the color
 
-echo -e "\e[31mText i red color[0m"
+echo -e "\e[31mText i red color\e[0m"
 echo "One more line"
