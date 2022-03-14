@@ -5,3 +5,4 @@ echo "Apple Cost $100"
 
 TRAINING=DevOps
 echo 'Training = ${TRAINING}'
+echo "Training = ${TRAINING}"
