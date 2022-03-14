@@ -18,3 +18,5 @@ echo Hello World.
 
 echo -e "\e[31mText i red color\e[0m"
 echo "One more line"
+echo -e "Line1\n\nline2"
+echo -e "Word1\t\tWord2"
