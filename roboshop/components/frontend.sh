@@ -7,7 +7,7 @@ echo -e "\e[36m Downloading Nginx content\e[0m"
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 
 echo -e "\e[36m Cleaning old Nginx content and extracting new download archive\e[0m"
-rm - rf /usr/share/nginx/html/*
+rm -rf /usr/share/nginx/html/*
 cd /usr/share/nginx/html/
 unzip /tmp/frontend.zip
 mv frontend-main/* .
