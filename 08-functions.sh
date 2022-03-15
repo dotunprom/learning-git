@@ -18,9 +18,21 @@ Print_Message() {
   echo hello,
   echo good morning,
   echo welcome to devops
+  echo "First Argument in Function =$1 "
   }
+
+## Main Program
+a=10
 Print_Message
 
-#first declare a function, then call the function
+echo "First Argument in Main Script = $1"
+echo "Value of b = $b"
+
+
+
+
+# First declare a function, then call the function.
+# Function will have its own set of special variables
+# Variable declared in main program can be written in function and vice versa
 
 
