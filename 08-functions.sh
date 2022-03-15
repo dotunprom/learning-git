@@ -14,7 +14,7 @@
 
 # func_name
 
-Print _Message() {
+Print_Message() {
   echo hello,
   echo good morning,
   echo welcome to devops
