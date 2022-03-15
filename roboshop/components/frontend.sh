@@ -23,7 +23,7 @@ LOG_FILE=/tmp/roboshop.log
 rm -f $LOG_FILE
 
 Print "Installing Nginx"
-yum install nginx -y
+yum install nginx -y >>$LOG_FILE
 MyChoice $?
 
 
