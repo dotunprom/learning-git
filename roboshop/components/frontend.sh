@@ -35,7 +35,6 @@ rm -rf frontend-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 MyChoice $?
 
-
 echo -e "\e[36m Starting Nginx \e[0m"
 systemctl restart nginx
 MyChoice $?
