@@ -40,3 +40,4 @@ systemctl enable mongod &>>$LOG_FILE && systemctl start mongod &>>$LOG_FILE
 MyChoice $?
 
 ## Every Database needs the schema to be loaded for the application to work.
+# netstat -lntp :  to check listen state
