@@ -14,8 +14,11 @@
 
 # func_name
 
-print _message()
- { echo hello, echo good morning, welcome to devops}
+print _message() {
+  echo hello,
+  echo good morning,
+  echo welcome to devops
+  }
 Print_Message
 
 #first declare a function, then call the function
