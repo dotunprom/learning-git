@@ -19,6 +19,8 @@ Print_Message() {
   echo good morning,
   echo welcome to devops
   echo "First Argument in Function =$1 "
+  a=20
+  echo "value of a = $a"
   }
 
 ## Main Program
