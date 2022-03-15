@@ -30,17 +30,23 @@ curl -f -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/f
 MyChoice $?
 
 
-echo -e "\e[36m Cleaning old Nginx content and extracting new download archive\e[0m"
+Print "Cleaning old Nginx content"
 rm -rf /usr/share/nginx/html/*
+MyChoice $?
+
 cd /usr/share/nginx/html/
-unzip /tmp/frontend.zip
-mv frontend-main/* .
-mv static/* .
-rm -rf frontend-main README.md
+
+Print "Extracting Archive"
+unzip /tmp/frontend.zip && mv frontend-main/* . && mv static/* .
+MyChoice $?
+
+# && : move to second line if firs command is good
+# || : if first is a failure, move the second command. if first is goo, it will go to second command.
+
+Print "Update roboshop configuration"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 MyChoice $?
 
 Print "Starting Nginx"
-systemctl restart nginx
+systemctl restart nginx && systemctl enable nginx
 MyChoice $?
-systemctl enable nginx
