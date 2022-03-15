@@ -25,7 +25,7 @@ Print_Message() {
 
 ## Main Program
 a=10
-Print_Message
+Print_Message DevOps
 
 echo "First Argument in Main Script = $1"
 echo "Value of b = $b"
