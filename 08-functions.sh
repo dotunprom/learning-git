@@ -40,8 +40,6 @@ echo "Value of b = $b"
 STAT
 echo Exit status of function STAT = $?
 
-}
-
 
 
 
