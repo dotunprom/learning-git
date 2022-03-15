@@ -40,4 +40,3 @@ echo -e "\e[36m Starting Nginx \e[0m"
 systemctl restart nginx
 MyChoice $?
 systemctl enable nginx
-}
