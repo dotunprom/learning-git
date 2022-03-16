@@ -10,7 +10,7 @@ Print "Install mongodb"
 yum install -y mongodb-org &>>$LOG_FILE
 MyChoice $?
 
-print "Update mongodb listen Address"
+Print "Update mongodb listen Address"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 MyChoice $?
 
