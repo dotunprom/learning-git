@@ -27,7 +27,6 @@ cd /tmp && unzip mongodb.zip &>>"$LOG_FILE"
 MyChoice $?
 
 Print "Load Schema"
-
 cd mongodb-main && mongo < catalogue.js &>>$LOG_FILE && mongo < users.js &>>$LOG_FILE
 MyChoice $?
 
