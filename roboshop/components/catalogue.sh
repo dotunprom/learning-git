@@ -10,9 +10,7 @@ Print "Install NodeJS"
 yum install nodejs gcc-c++ -y &>>${LOG_FILE}
 MyChoice $?
 
-Print "Add Application User"
-adduser ${APP_USER} &>>${LOG_FILE}
-MyChoice $?
+
 
 Print "Download Application component"
 curl -f -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>${LOG_FILE}
