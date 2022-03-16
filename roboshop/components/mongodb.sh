@@ -18,5 +18,18 @@ Print "Start mongodb"
 systemctl enable mongod &>>$LOG_FILE && systemctl start mongod &>>$LOG_FILE
 MyChoice $?
 
+Print "Download Schema"
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG_FILE
+MyChoice $?
+
+Print "Extract Schema"
+cd /tmp && unzip mongodb.zip &>>$LOG_FILE
+MyChoice $?
+
+Print "Load Schema"
+cd mongodb-main && mongo < catalogue.js && mongo < users.js &>>$LOG_FILE
+MyChoice $?
+
+
 ## Every Database needs the schema to be loaded for the application to work.
 # netstat -lntp :  to check listen state
