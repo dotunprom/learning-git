@@ -15,7 +15,7 @@ sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 MyChoice $?
 
 Print "Start mongodb"
-systemctl enable mongod &>>$LOG_FILE && systemctl start mongod &>>$LOG_FILE
+systemctl enable mongod &>>$LOG_FILE && systemctl restart mongod &>>$LOG_FILE
 MyChoice $?
 
 Print "Download Schema"
