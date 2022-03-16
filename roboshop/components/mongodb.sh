@@ -27,7 +27,16 @@ cd /tmp && unzip mongodb.zip &>>"$LOG_FILE"
 MyChoice $?
 
 Print "Load Schema"
-cd mongodb-main && mongo < catalogue.js &>>$LOG_FILE && mongo < users.js &>>$LOG_FILE
+
+
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+
+cd /tmp &>>$LOG_FILE
+unzip mongodb.zip &>>$LOG_FILE
+cd mongodb-main &>>$LOG_FILE
+mongo < catalogue.js &>>$LOG_FILE
+mongo < users.js &>>$LOG_FILE
+
 MyChoice $?
 
 
