@@ -22,13 +22,9 @@ Print "Download Schema"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG_FILE
 MyChoice $?
 
-Print "Extract Schema"
-cd /tmp && unzip mongodb.zip &>>"$LOG_FILE"
-MyChoice $?
+
 
 Print "Load Schema"
-
-
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
 
 cd /tmp &>>$LOG_FILE
