@@ -19,7 +19,7 @@ systemctl enable mongod &>>$LOG_FILE && systemctl start mongod &>>$LOG_FILE
 MyChoice $?
 
 Print "Download Schema"
-curl -f -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG_FILE
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG_FILE
 MyChoice $?
 
 Print "Extract Schema"
