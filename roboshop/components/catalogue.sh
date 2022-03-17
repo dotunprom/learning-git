@@ -10,7 +10,7 @@ Print "Install NodeJS"
 yum install nodejs gcc-c++ -y &>>${LOG_FILE}
 MyChoice $?
 
-Print "Add Application User"() {
+Print "Add Application User"{
   id ${APP_USER} &>>${LOG_FILE}
   if [ $? -ne 0 ]; then
     Print "Add Application User"
