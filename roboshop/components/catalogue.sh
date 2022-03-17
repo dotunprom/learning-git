@@ -30,3 +30,7 @@ MyChoice $?
 Print "Install  App Dependencies"
 cd /home/${APP_USER}/catalogue &>>${LOG_FILE} && npm install &>>${LOG_FILE}
 MyChoice $?
+
+Print "Fix App_User Permissions"
+chown -R ${APP_USER}:${APP_USER} /home/${APP_USER}
+MyChoice $?
