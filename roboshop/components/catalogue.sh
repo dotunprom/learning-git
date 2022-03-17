@@ -12,6 +12,12 @@ MyChoice $?
 
 Print "Add Application User"
 adduser ${APP_USER} &>>${LOG_FILE}
+id ${APP_USER} &>>${LOG_FILE}
+  if [ $? -ne 0 ]; then
+    Print "Add Application User"
+    useradd ${APP_USER} &>>${LOG_FILE}
+    MyChoice $?
+  fi
 MyChoice $?
 
 Print "Download Application component"
