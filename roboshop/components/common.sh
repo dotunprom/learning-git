@@ -21,4 +21,12 @@ fi
 LOG_FILE=/tmp/roboshop.log
 rm -f $LOG_FILE
 
+
+APP_USER=roboshop
+ if [ $? -ne 0 ]; then
+    Print "Add Application User"
+    useradd ${APP_USER} &>>${LOG_FILE}
+    MyChoice $?
+  fi
+
 APP_USER=roboshop
