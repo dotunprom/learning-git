@@ -40,7 +40,7 @@ chown -R ${APP_USER}:${APP_USER} /home/${APP_USER}
 MyChoice $?
 
 Print "Setup SystemD File"
-sed -i  -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/'
+sed -i  -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' \
 /home/roboshop/systemd.service &>>${LOG_FILE} && mv /home/roboshop/systemd.service /etc/systemd/system/.service  &>>${LOG_FILE}
 MyChoice $?
 
