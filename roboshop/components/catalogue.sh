@@ -23,7 +23,7 @@ curl -f -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/
 MyChoice $?
 
 Print "Clean Old Content"
-rm -rf /home/${APP_USER}/catalogue &>>$"{LOG_FILE}"
+rm -rf /home/${APP_USER}/catalogue &>>${LOG_FILE}
 MyChoice $?
 
 
@@ -32,7 +32,7 @@ cd /home/${APP_USER} &>>${LOG_FILE} && unzip -o /tmp/catalogue.zip &>>${LOG_FILE
 MyChoice $?
 
 Print "Install  App Dependencies"
-cd /home/${APP_USER}/catalogue &>>$"{LOG_FILE}"&& npm install &>>${LOG_FILE}
+cd /home/${APP_USER}/catalogue &>>${LOG_FILE}&& npm install &>>${LOG_FILE}
 MyChoice $?
 
 Print "Fix App_User Permissions"
