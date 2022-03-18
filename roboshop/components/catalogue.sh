@@ -41,9 +41,7 @@ MyChoice $?
 
 Print "Setup SystemD File"
  sed -i  -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' \
-   # shellcheck disable=SC2224
-   /home/roboshop/catalogue/systemd.service &>>${LOG_FILE} && mv
-   /home/roboshop/catalogue/systemd.service
+   mv /home/roboshop/catalogue/systemd.service  &>>${LOG_FILE} && /etc/systemd/system/catalogue.service
    /etc/systemd/system/catalogue.service  &>>${LOG_FILE}
 MyChoice $?
 
