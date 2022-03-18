@@ -39,10 +39,15 @@ Print "Fix App_User Permissions"
 chown -R ${APP_USER}:${APP_USER} /home/${APP_USER}
 MyChoice $?
 
-Print "Setup SystemD File"
-sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/'
-/home/roboshop/catalogue/systemd.service &>>${LOG_FILE} && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service  &>>${LOG_FILE}
-MyChoice $?
+#Print "Setup SystemD File"
+#sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/'
+# /home/roboshop/catalogue/systemd.service &>>${LOG_FILE} && mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service  &>>${LOG_FILE}
+#MyChoice $?
+
+ Print "Setup SystemD File"
+  sed -i  -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' \
+          /home/roboshop/${COMPONENT}/systemd.service &>>${LOG_FILE} && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service  &>>${LOG_FILE}
+  StatCheck $?
 
 
 
