@@ -42,7 +42,7 @@ MyChoice $?
 Print "Setup SystemD File"
 sed -i  -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/'
 /home/roboshop/systemd.service &>>${LOG_FILE} && mv /home/roboshop/systemd.service /etc/systemd/system/.service  &>>${LOG_FILE}
-MyCoice $?
+MyChoice $?
 
 
 
