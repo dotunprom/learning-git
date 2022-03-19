@@ -1,7 +1,7 @@
 #!/bin/bash
 
-Loop based on expression , while loop command
-Loop based on inputs , for loop command
+#Loop based on expression , while loop command
+#Loop based on inputs , for loop command
 
 i=10
 while [ $i -gt 0 ]; do
