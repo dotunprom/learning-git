@@ -11,4 +11,4 @@ catalogue:
 	bash components/catalogue.sh
 
 redis:
-    	bash components/redis.sh
+	bash components/redis.sh
