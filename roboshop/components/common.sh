@@ -65,8 +65,7 @@ NODEJS(){
          MyChoice $?
 
          Print "Setup SystemD File"
-          sed -i  -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/REDIS_HOST/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/'
-            /home/roboshop/${COMPONENT}/systemd.service &>>${LOG_FILE} && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service  &>>${LOG_FILE}
+          sed -i  -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/REDIS_HOST/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/roboshop/${COMPONENT}/systemd.service &>>${LOG_FILE} && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service  &>>${LOG_FILE}
          MyChoice $?
 
           #Print "Setup SystemD File"
