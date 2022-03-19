@@ -2,6 +2,6 @@
 
 source components/common.sh
 
-COMPONENT=ca
+COMPONENT=cart
 ## Function
 NODEJS
