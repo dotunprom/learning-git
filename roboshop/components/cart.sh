@@ -1,1 +1,7 @@
-echo Cart Components
+#!/bin/bash
+
+source components/common.sh
+
+COMPONENT=cart
+## Function
+NODEJS
