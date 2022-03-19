@@ -3,5 +3,5 @@
 source components/common.sh
 
 COMPONENT=cart
-## Function
+Function
 NODEJS
