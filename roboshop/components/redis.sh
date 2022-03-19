@@ -11,14 +11,12 @@ yum install redis -y
 MyChoice $?
 
 Print "Update Redis Config"
-if
-  [ -f /etc/redis.conf ]; then
+if [ -f /etc/redis.conf ]; then
   sed -i -e 's/127.0.0.1/0.0.0.0' /etc/redis.conf
 fi
 MyChoice $?
 
-if
-  [ -f /etc/redis/redis.conf ]; then
+if [ -f /etc/redis/redis.conf ]; then
     sed -i -e 's/127.0.0.1/0.0.0.0' /etc/redis/redis.conf
 fi
 MyChoice $?
