@@ -17,7 +17,7 @@ MyChoice $?
 
 echo "SET PASSWORD FOR 'root'@localhost' = PASSWORD('Roboshop@1');" >/tmp/rootpass.sql
 
-DEFAULT_ROOT_PASSWORD=$(grep 'temporary password' /var/log/mysql.log | awk '{print $NF}')
+DEFAULT_ROOT_PASSWORD=$( grep 'temporary password' /var/log/mysql.log | awk '{print $NF}')
 mysql -uroot -p"${DEFAULT_ROOT_PASSWORD}" </tmp/rootpass.sql
 
 
