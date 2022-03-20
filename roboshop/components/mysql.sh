@@ -18,7 +18,7 @@ MyChoice $?
 echo "SET PASSWORD FOR 'root'@localhost' = PASSWORD('Roboshop@1');" >/tmp/rootpass.sql
 
 DEFAULT_ROOT_PASSWORD=$( grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
-mysql -uroot -p"${DEFAULT_ROOT_PASSWORD}" </tmp/rootpass.sql
+mysql --connect-expired-password -uroot -p"${DEFAULT_ROOT_PASSWORD}" </tmp/rootpass.sql
 
 
 ## mysql_secure_installation
