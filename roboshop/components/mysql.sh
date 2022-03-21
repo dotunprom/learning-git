@@ -40,4 +40,6 @@ MyChoice $?
 
 Print "Load Schema"
 cd mysql-main && mysql -u root -pRoboShop@1 <shipping.sql &>>${LOG_FILE}
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Current-Root-Password';
+FLUSH PRIVILEGES;
 MyChoice $?
