@@ -35,7 +35,7 @@ curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/a
 MyChoice $?
 
 Print "Extract Schema"
-cd /tmp && unzip mysql.zip &>>${LOG_FILE}
+cd /tmp && unzip -o mysql.zip &>>${LOG_FILE}
 MyChoice $?
 
 Print "Load Schema"
