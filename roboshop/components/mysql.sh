@@ -23,7 +23,7 @@ echo "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('Roboshop@1');" >/tmp/rootp
 MyChoice $?
 fi
 
-echo show plugins | mysql -uroot -pRoboShop@1 2>>&>>${LOG_FILE} | grep validate_password &>>${LOG_FILE}
+echo show plugins | mysql -uroot -pRoboShop@1 2&>>${LOG_FILE} | grep validate_password &>>${LOG_FILE}
 if [ $? -ne 0 ]; then
   Print "Uninstall Password validate plugin"
   echo 'uninstall password validate_password;' </tmp/rootpass.sql &>>${LOG_FILE}
