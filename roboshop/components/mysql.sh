@@ -38,3 +38,6 @@ Print "Extract Schema"
 cd /tmp && unzip -o mysql.zip &>>${LOG_FILE}
 MyChoice $?
 
+Print "Load Schema"
+cd mysql-main && mysql -u root -pRoboShop@1 <shipping.sql &>>${LOG_FILE}
+MyChoice $?
