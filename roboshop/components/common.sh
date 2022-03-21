@@ -89,18 +89,17 @@ NODEJS(){
 
 SERVICE_SETUP
 
-         MAVEN(){
-Print "Install Maven"
-yum install maven -y &>>${LOG_FILE}
-MyChoice $?
+MAVEN(){
+   Print "Install Maven"
+   yum install maven -y &>>${LOG_FILE}
+   MyChoice $?
 
-APP_SETUP
+   APP_SETUP
 
-Print "Maven Packaging"
-cd /home/${APP_USER}/${COMPONENT} && mvn clean package &>>${LOG_FILE}
-MyChoice $?
+   Print "Maven Packaging"
+   cd /home/${APP_USER}/${COMPONENT} && mvn clean package &>>${LOG_FILE}
+   MyChoice $?
 
-
-SERVICE_SETUP
+   SERVICE_SETUP
 
 }
