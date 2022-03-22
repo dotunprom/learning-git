@@ -105,16 +105,15 @@ MAVEN() {
 
 PYTHON() {
 
-Print "Install Python"
-yum install python36 gcc python3-devel -y &>>${LOG_FILE}
-MyChoice $?
+  Print "Install Python"
+  yum install python36 gcc python3-devel -y &>>${LOG_FILE}
+  MyChoice $?
 
-APP_SETUP
+  APP_SETUP
 
-Print "Print Install Python Dependencies"
-cd /home/APP_USER/${COMPONENT} &>>${LOG_FILE} && pip3 install -r requirements.txt &>>${LOG_FILE}
-MyChoice $?
+  Print "Install Python Dependencies"
+  cd /home/${APP_USER}/${COMPONENT} && pip3 install -r requirements.txt &>>${LOG_FILE}
+  StatCheck $?
 
-SERVICE_SETUP
-
+  MyChoice $?
 }
