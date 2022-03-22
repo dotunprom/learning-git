@@ -49,7 +49,7 @@ APP_SETUP(){
 }
 
 SERVICE_SETUP(){
-  Print "Fix App_User Permissions"
+           Print "Fix App_User Permissions"
            chown -R ${APP_USER}:${APP_USER} /home/${APP_USER}
            MyChoice $?
 
@@ -67,9 +67,9 @@ SERVICE_SETUP(){
            Print "Restart ${COMPONENT} Service"
            systemctl daemon-reload &>>${LOG_FILE} && systemctl restart ${COMPONENT} &>>${LOG_FILE} && systemctl enable ${COMPONENT} &>>${LOG_FILE}
            MyChoice $?
-
-      SERVICE_SETUP
 }
+
+
 NODEJS(){
   Print "Config YUM repo"
          curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - &>>${LOG_FILE}
