@@ -112,7 +112,8 @@ PYTHON() {
 
   Print "Install Python Dependencies"
   cd /home/${APP_USER}/${COMPONENT} && pip3 install -r requirements.txt &>>${LOG_FILE}
-  StatCheck $?
+
+  SERVICE_SETUP
 
   MyChoice $?
 }
