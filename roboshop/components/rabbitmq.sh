@@ -16,9 +16,12 @@ MyChoice $?
 
 #RabbitMQ comes with a default username / password as `guest`/`guest`. But this user cannot be used to connect. Hence we need to create one user for the application.
 
-Print "Create Application User"
-rabbitmqctl add_user roboshop roboshop123 &>>${LOG_FILE}
-MyChoice $?
+rabbitmqctl list_users | grep roboshop &>>${LOG_FILE}
+if [ $? -ne 0 ]; then
+  Print "Create Application User"
+  rabbitmqctl add_user roboshop roboshop123 &>>${LOG_FILE}
+  MyChoice $?
+fi
 
 # rabbitmqctl set_user_tags roboshop administrator
 # rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
