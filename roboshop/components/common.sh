@@ -36,7 +36,7 @@ APP_SETUP(){
          MyChoice $?
 
          Print "CleanUp Old Content"
-         rm -rf /home/${var:APP_USER}/${COMPONENT} &>>${LOG_FILE}
+         rm -rf /home/${"APP_USER"}/${COMPONENT} &>>${LOG_FILE}
          MyChoice $?
 
 
