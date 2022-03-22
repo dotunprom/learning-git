@@ -108,7 +108,7 @@ PYTHON() {
   yum install python36 gcc python3-devel -y &>>${LOG_FILE}
   MyChoice $?
 
-  APP_SETUP
+
 
   Print "Install Python Dependencies"
   cd /home/${APP_USER}/${COMPONENT} && pip3 install -r requirements.txt &>>${LOG_FILE}
