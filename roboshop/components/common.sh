@@ -67,6 +67,22 @@ SERVICE_SETUP() {
            MyChoice $?
 }
 
+PYTHON() {
+
+  Print "Install Python"
+  yum install python36 gcc python3-devel -y &>>${LOG_FILE}
+  MyChoice $?
+
+  APP_SETUP
+
+  Print "Install Python Dependencies"
+  cd /home/${APP_USER}/${COMPONENT} && pip3 install -r requirements.txt &>>${LOG_FILE}
+
+  SERVICE_SETUP
+
+  MyChoice $?
+}
+
 NODEJS() {
 
   Print "Configure Yum repos"
@@ -100,20 +116,4 @@ MAVEN() {
 
   SERVICE_SETUP
 
-}
-
-PYTHON() {
-
-  Print "Install Python"
-  yum install python36 gcc python3-devel -y &>>${LOG_FILE}
-  MyChoice $?
-
-  APP_SETUP
-
-  Print "Install Python Dependencies"
-  cd /home/${APP_USER}/${COMPONENT} && pip3 install -r requirements.txt &>>${LOG_FILE}
-
-  SERVICE_SETUP
-
-  MyChoice $?
 }
