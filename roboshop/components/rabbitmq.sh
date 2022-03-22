@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source components/common.sh
+
 print "Configure YUM Repos"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>>${LOG_FILE}
 MyChoice $?
