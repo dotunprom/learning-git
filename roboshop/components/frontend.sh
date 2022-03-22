@@ -16,7 +16,7 @@ Print "Cleaning old Nginx content"
 rm -rf /usr/share/nginx/html/* &>>$LOG_FILE
 MyChoice $?
 
-
+cd/usr/share/nginx/html/
 
 Print "Extracting Archive"
 unzip /tmp/frontend.zip &>>$LOG_FILE && mv frontend-main/* . &>>$LOG_FILE && mv static/* . &>>$LOG_FILE
@@ -34,5 +34,5 @@ MyChoice $?
 done
 
 Print "Starting Nginx"
-systemctl restart nginx &>>$LOG_FILE && systemctl enable nginx &>>$LOG_FILE
+systemctl restart nginx &>>{$LOG_FILE} && systemctl enable nginx &>>{$LOG_FILE}
 MyChoice $?
