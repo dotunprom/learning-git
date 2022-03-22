@@ -35,7 +35,7 @@ APP_SETUP(){
          curl -f -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>${LOG_FILE}
          MyChoice $?
 
-         Print "Clean Old Content"
+         Print "CleanUp Old Content"
          rm -rf /home/${APP_USER}/${COMPONENT} &>>${LOG_FILE}
          MyChoice $?
 
