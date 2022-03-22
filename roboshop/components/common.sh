@@ -103,7 +103,7 @@ MAVEN() {
 
 }
 
-PYTHON()
+PYTHON(){
 
 Print "Install Python"
 yum install python36 gcc python3-devel -y &>>${LOG_FILE}
@@ -117,15 +117,4 @@ MyChoice $?
 
 SERVICE_SETUP
 
-**Note: Above command may fail with permission denied, So run as root user**
-
-1. Update the roboshop user and group id in `payment.ini` file.
-2. Update SystemD service file
-
-    Update `CARTHOST` with cart server ip
-
-    Update `USERHOST` with user server ip
-
-    Update `AMQPHOST` with RabbitMQ server ip.
-
-3. Setup the service
+}
