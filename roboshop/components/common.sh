@@ -70,17 +70,17 @@ NODEJS() {
 
   Print "Configure Yum repos"
   curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - &>>${LOG_FILE}
-  StatCheck $?
+  MyChoice $?
 
   Print "Install NodeJS"
   yum install nodejs gcc-c++ -y &>>${LOG_FILE}
-  StatCheck $?
+  MyChoice $?
 
   APP_SETUP
 
   Print "Install App Dependencies"
   cd /home/${APP_USER}/${COMPONENT} &>>${LOG_FILE} && npm install &>>${LOG_FILE}
-  StatCheck $?
+  MyChoice $?
 
   SERVICE_SETUP
 
