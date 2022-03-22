@@ -1,7 +1,7 @@
 #!/bin/bash
 
-print " Configure YUM Repos"
-curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash &>>${LOG_FILE}
+print "Configure YUM Repos"
+curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>>${LOG_FILE}
 MyChoice $?
 
 Print "Install ERlang & Rabbitmq"
