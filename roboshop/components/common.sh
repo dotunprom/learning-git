@@ -67,35 +67,17 @@ SERVICE_SETUP(){
 }
 
 
-NODEJS(){
-  Print "Config YUM repo"
-         curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - &>>${LOG_FILE}
-         MyChoice $?
+MAVEN() {
+  Print "Install Maven"
+  yum install maven -y &>>${LOG_FILE}
+  MyChoice $?
 
-         Print "Install NodeJS"
-         yum install nodejs gcc-c++ -y &>>${LOG_FILE}
-         MyChoice $?
+  APP_SETUP
 
-         APP_SETUP
+  Print "Maven Packaging"
+  cd /home/${APP_USER}/${COMPONENT} &&  mvn clean package &>>${LOG_FILE} && mv target/shipping-1.0.jar shipping.jar &>>${LOG_FILE}
+  MyChoice $?
 
-         Print "Install  App Dependencies"
-         cd /home/${APP_USER}/${COMPONENT} &>>${LOG_FILE}&& npm install &>>${LOG_FILE}
-         MyChoice $?
-
-         SERVICE_SETUP
-}
-
-MAVEN(){
-   Print "Install Maven"
-   yum install maven -y &>>${LOG_FILE}
-   MyChoice $?
-
-   APP_SETUP
-
-   Print "Maven Packaging"
-   cd /home/${APP_USER}/${COMPONENT} && mvn clean package &>>${LOG_FILE} && mv target/shipping-1.0.jar shipping.jar &>>${LOG_FILE}
-   MyChoice $?
-
-   SERVICE_SETUP
+  SERVICE_SETUP
 
 }
