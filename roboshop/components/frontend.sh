@@ -37,7 +37,7 @@
 #systemctl restart nginx &>>{$LOG_FILE} && systemctl enable nginx &>>{$LOG_FILE}
 #MyChoice $?
 
-#!/bin/bash
+!/bin/bash
 
 source components/common.sh
 
