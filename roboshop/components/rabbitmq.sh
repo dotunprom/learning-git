@@ -23,5 +23,6 @@ if [ $? -ne 0 ]; then
   MyChoice $?
 fi
 
-# rabbitmqctl set_user_tags roboshop administrator
-# rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+Print "Configure Application User"
+rabbitmqctl set_user_tags roboshop administrator &>>${LOG_FILE} && rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+MyChoice $?
