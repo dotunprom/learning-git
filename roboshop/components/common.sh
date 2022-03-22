@@ -33,17 +33,17 @@ APP_SETUP() {
   curl -f -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>${LOG_FILE}
   StatCheck $??
 
-         Print "CleanUp Old Content"
-           rm -rf /home/${APP_USER}/${COMPONENT} &>>${LOG_FILE}
-           StatCheck $?
+  Print "CleanUp Old Content"
+  rm -rf /home/${APP_USER}/${COMPONENT} &>>${LOG_FILE}
+  StatCheck $?
 
 
-         Print "Extract App Content"
-           cd /home/${APP_USER} &>>${LOG_FILE} && unzip -o /tmp/${COMPONENT}.zip &>>${LOG_FILE} && mv ${COMPONENT}-main ${COMPONENT} &>>${LOG_FILE}
-           StatCheck $?
+  Print "Extract App Content"
+  cd /home/${APP_USER} &>>${LOG_FILE} && unzip -o /tmp/${COMPONENT}.zip &>>${LOG_FILE} && mv ${COMPONENT}-main ${COMPONENT} &>>${LOG_FILE}
+  StatCheck $?
 }
 
-SERVICE_SETUP(){
+SERVICE_SETUP() {
            Print "Fix App User Permissions"
              chown -R ${APP_USER}:${APP_USER} /home/${APP_USER}
              StatCheck $?
@@ -58,7 +58,6 @@ SERVICE_SETUP(){
             -e 's/CARTHOST/cart.roboshop.internal/' \
             -e 's/USERHOST/user.roboshop.internal/' \
             -e 's/AMQPHOST/rabbitmq.roboshop.internal/' \
-
             /home/roboshop/${COMPONENT}/systemd.service &>>${LOG_FILE} && mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service  &>>${LOG_FILE}
            MyChoice $?
 
