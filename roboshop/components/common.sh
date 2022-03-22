@@ -85,9 +85,8 @@ NODEJS(){
          cd /home/${APP_USER}/${COMPONENT} &>>${LOG_FILE}&& npm install &>>${LOG_FILE}
          MyChoice $?
 
-         }
-
-SERVICE_SETUP
+         SERVICE_SETUP
+}
 
 MAVEN(){
    Print "Install Maven"
