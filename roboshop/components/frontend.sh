@@ -13,7 +13,7 @@ MyChoice $?
 
 
 Print "Cleaning old Nginx content"
-rm -rf /usr/share/nginx/html/* &>>$LOG_FILE
+rm -rf /usr/share/nginx/html/*
 MyChoice $?
 
 cd /usr/share/nginx/html/
